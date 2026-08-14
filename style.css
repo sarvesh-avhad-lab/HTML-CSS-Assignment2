@@ -1,0 +1,25 @@
+:root {
+    --primary: #dc4329;
+    --primary-2: #d07631;
+    --tertiary: #1e1810;
+    --secondary: #575250;
+    --neutral: #f6f6f6;
+    --white: #ffffff;
+    --border: #dde0e8;
+
+    --gradient-btn: linear-gradient(90deg, #dc4329 0%, #d07631 100%);
+    --gradient-title: linear-gradient(90deg, #000000 0%, #313539 100%);
+    --gradient-logo: linear-gradient(90deg, #1e1810 0%, #6d2212 50%, #dc4329 100%);
+
+    --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --title-size: 42px;
+    --title-line: 63px;
+    --sub-size: 23.1px;
+    --sub-line: 36.75px;
+
+    --section-pad: 100px;
+    --wrap-pad: 73.5px;
+    --block-gap: 84px;
+}
