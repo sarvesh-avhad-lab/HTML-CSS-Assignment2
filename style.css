@@ -386,3 +386,30 @@ button { font: inherit; color: inherit; }
     object-fit: contain;
     opacity: 0.8;
 }
+
+/* Geatures & COURSES */
+.courses {
+    position: relative;
+    overflow: hidden;
+}
+
+.courses__pattern {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+}
+
+.courses__inner { position: relative; }
+
+.section-head--wide { max-width: 984.9px; }
+.section-head--wide .section-sub { max-width: 984.9px; }
+
+.courses__body {
+    display: flex;
+    flex-direction: column;
+    gap: 52.5px;
+    width: 100%;
+}
