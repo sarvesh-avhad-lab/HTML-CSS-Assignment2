@@ -453,3 +453,112 @@ button { font: inherit; color: inherit; }
     background: var(--gradient-btn);
     color: var(--white);
 }
+
+/* ---------- Course cards ---------- */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+    width: 100%;
+}
+
+.course-card {
+    display: flex;
+    flex-direction: column;
+    height: 504px;
+    background: var(--neutral);
+    border-radius: 21px;
+    overflow: hidden;
+}
+
+.course-card__media {
+    position: relative;
+    flex: none;
+    height: 231px;
+}
+
+.course-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-card__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(30, 30, 30, 0.3);
+}
+
+.course-card__media .pill--level {
+    position: absolute;
+    top: 13.65px;
+    left: 13.65px;
+    z-index: 1;
+}
+
+.course-card__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15.75px;
+    padding: 15.75px;
+}
+
+.course-card__body h3 {
+    max-width: 290.85px;
+    font-weight: 600;
+    font-size: 16.8px;
+    line-height: 26.25px;
+    color: var(--tertiary);
+}
+
+.course-card__body p {
+    max-width: 280.35px;
+    font-weight: 400;
+    font-size: 12.6px;
+    line-height: 18.9px;
+    color: var(--secondary);
+}
+
+.course-card__meta {
+    display: flex;
+    align-items: center;
+    flex: none;
+    padding: 5.25px 0;
+}
+
+.course-card__meta li {
+    display: flex;
+    align-items: center;
+    gap: 10.5px;
+    padding: 0 15.75px;
+}
+
+.course-card__meta img { width: 13.65px; height: 13.65px; flex: none; }
+
+.course-card__meta span {
+    font-weight: 400;
+    font-size: 12.6px;
+    line-height: 18.9px;
+    color: var(--tertiary);
+    white-space: nowrap;
+}
+
+.course-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: none;
+    gap: 10.5px;
+    padding: 21px 15.75px 15.75px;
+    border-top: 1.05px solid rgba(87, 82, 80, 0.1);
+}
+
+.course-card__price {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 18.9px;
+    color: var(--tertiary);
+}
