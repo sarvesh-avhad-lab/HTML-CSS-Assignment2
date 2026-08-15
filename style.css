@@ -1,3 +1,5 @@
+/* root setup */
+
 :root {
     --primary: #dc4329;
     --primary-2: #d07631;
@@ -23,3 +25,59 @@
     --wrap-pad: 73.5px;
     --block-gap: 84px;
 }
+
+
+
+/* HEADER */
+
+.site-header { background: var(--white); }
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    height: 126px;
+}
+
+.nav__logo img { width: 264.81px; height: 52.46px; object-fit: contain; }
+
+.nav__right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 31.7px;
+    font-weight: 500;
+    font-size: 22.643px;
+    line-height: 29px;
+}
+
+.nav__actions {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8.4px;
+    width: 112.4px;
+    height: 47.25px;
+    padding: 8px 12px;
+    background: rgba(30, 24, 16, 0);
+    border: 1.05px solid var(--tertiary);
+    border-radius: 42px;
+    cursor: pointer;
+}
+
+.lang-btn__flag { width: 48px; height: 48px; object-fit: cover; }
+.lang-btn__caret { width: 32px; height: 32px; }
+
+.nav .btn--primary { height: 47.25px; width: 153.54px; }
