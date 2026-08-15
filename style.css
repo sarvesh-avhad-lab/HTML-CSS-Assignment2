@@ -413,3 +413,43 @@ button { font: inherit; color: inherit; }
     gap: 52.5px;
     width: 100%;
 }
+
+/* Courses category tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tabs__pill {
+    display: flex;
+    align-items: center;
+    gap: 25.2px;
+    padding: 20px 24px;
+    background: var(--neutral);
+    border-radius: 1048.95px;
+}
+
+.tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 12.6px;
+    padding: 10.5px 26.25px;
+    background: transparent;
+    border: 0;
+    border-radius: 1048.95px;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: normal;
+    color: var(--tertiary);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.tab > img { width: 27.3px; height: 27.3px; flex: none; }
+.tab__info { width: 25.422px; height: 25.422px; }
+
+.tab--active {
+    background: var(--gradient-btn);
+    color: var(--white);
+}
