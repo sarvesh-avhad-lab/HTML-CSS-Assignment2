@@ -689,3 +689,38 @@ button { font: inherit; color: inherit; }
     color: var(--neutral);
 }
 
+/* Slider navigation buttons */
+.slider-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.51px;
+    width: 112.35px;
+    margin: 0 auto;
+}
+
+.slider-nav__btn {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 32.565px;
+    height: 32.565px;
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.slider-nav__btn > img { width: 32.565px; height: 32.565px; }
+
+.slider-nav__arrow {
+    position: absolute;
+    width: 16.283px;
+    height: 16.283px;
+    object-fit: contain;
+}
+
+.slider-nav__btn--prev .slider-nav__arrow { transform: rotate(90deg); }
+.slider-nav__btn--next .slider-nav__arrow { transform: rotate(270deg); }
+
+.slider-nav__dots { width: 34.193px; height: 3.257px; }
