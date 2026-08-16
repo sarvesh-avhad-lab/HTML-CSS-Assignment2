@@ -969,3 +969,56 @@ button { font: inherit; color: inherit; }
     line-height: 25.2px;
     color: var(--secondary);
 }
+
+/* Browse Courses section  */
+.cta__inner {
+    position: relative;
+    width: 100%;
+    max-width: 1228.5px;
+    height: 571.2px;
+    margin: 0 auto;
+}
+
+.cta__panel {
+    position: absolute;
+    top: 52.5px;
+    right: 0;
+    width: 693px;
+    height: 466.2px;
+    padding: 87.15px 42px 0 122.85px;
+    background: var(--tertiary);
+    border-radius: 21px;
+}
+
+.cta__panel::after {
+    content: "";
+    position: absolute;
+    inset: 10.5px;
+    border: 1.05px solid rgba(246, 246, 246, 0.15);
+    border-radius: 15.75px;
+    pointer-events: none;
+}
+
+.cta__panel h2 {
+    max-width: 518.7px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--title-size);
+    line-height: var(--title-line);
+    letter-spacing: 0.42px;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.cta__panel .btn { margin-top: 50.4px; }
+
+.cta__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 618.45px;
+    height: 571.2px;
+    object-fit: cover;
+    border-radius: 21px;
+}
