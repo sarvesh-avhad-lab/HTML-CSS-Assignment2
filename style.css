@@ -1307,3 +1307,57 @@ button { font: inherit; color: inherit; }
     .carousel { height: auto; gap: 40px; }
 }
 
+/* Mobile phones */
+@media (max-width: 620px) {
+    :root {
+        --wrap-pad: 20px;
+        --section-pad: 60px;
+        --block-gap: 40px;
+        --title-size: 28px;
+        --title-line: 40px;
+        --sub-size: 16.8px;
+        --sub-line: 27px;
+    }
+
+    .wrap--wide, .wrap--footer { padding: 0 20px; }
+
+    .nav__logo img { width: 200px; height: auto; }
+    .nav__menu { font-size: 16px; gap: 16px; }
+
+    .hero__content { padding: 40px 24px; }
+    .hero__title { font-size: 32px; line-height: 42px; }
+    .hero__actions .btn { flex: 1 1 100%; }
+
+    .highlights,
+    .course-grid,
+    .faculty__grid { grid-template-columns: 1fr; }
+
+    .highlights { gap: 20px; }
+    .course-grid, .faculty__grid { gap: 24px; }
+
+    .steps__list { grid-template-columns: 1fr; gap: 32px; }
+    .steps__list::before { display: none; }
+
+    .faculty { padding: 60px 0; }
+
+    .quote-card { padding: 32px 24px; }
+    .quote-card blockquote { font-size: 18px; line-height: 30px; }
+    .quote-card__author { gap: 16px; }
+    .quote-card__mark { width: 32px; height: 32px; }
+
+    .faq-item { padding: 24px 20px; }
+    .faq-item summary { font-size: 18px; line-height: 28px; gap: 14px; }
+    .faq-item summary::before { margin-top: 5px; }
+    .faq-item[open] summary::before { margin-top: 12px; }
+    .faq-item p { padding-left: 32.9px; font-size: 15px; }
+
+    .cta__panel { padding: 40px 24px; }
+    .cta__image { height: 260px; }
+
+    .subscribe { flex-wrap: wrap; }
+    .subscribe__field { flex: 1 1 100%; }
+    .subscribe__btn { width: 100%; }
+
+    .footer__bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .footer__bottom ul { flex-wrap: wrap; gap: 24px; }
+}
