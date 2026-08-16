@@ -1183,3 +1183,127 @@ button { font: inherit; color: inherit; }
     display: flex;
     gap: 42px;
 }
+
+/* Media Queries */
+
+
+/*  Desktop view ---- */
+@media (max-width: 1440px) {
+    :root { --wrap-pad: 48px; }
+    .wrap--footer { padding: 0 48px; }
+    .quote-card { padding-left: 72px; padding-right: 72px; }
+    .footer__links { gap: 48px; }
+}
+
+/* hero & CTA changes ---- */
+@media (max-width: 1280px) {
+    :root {
+        --section-pad: 84px;
+        --block-gap: 63px;
+        --title-size: 36px;
+        --title-line: 52px;
+        --sub-size: 20px;
+        --sub-line: 32px;
+    }
+
+    .nav__menu { font-size: 18px; gap: 24px; }
+    .nav__right, .nav__actions { gap: 20px; }
+
+    .hero__content { padding: 72px 40px; }
+    .hero__title { font-size: 50px; line-height: 66px; }
+    .hero__card { min-height: 0; }
+
+    .faculty { padding: 110px 0; }
+
+    .cta__inner { height: auto; }
+
+    .cta__panel {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 60px 48px;
+    }
+
+    .cta__image {
+        position: relative;
+        width: 100%;
+        height: 380px;
+        margin-bottom: -40px;
+    }
+
+    .cta__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cta__panel h2 { max-width: none; }
+}
+
+/* 4 grids To 2 grid ---- */
+@media (max-width: 1100px) {
+    .highlights,
+    .course-grid,
+    .faculty__grid { grid-template-columns: repeat(2, 1fr); }
+
+    .steps__list {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    .steps__list::before { left: 16.6%; right: 16.6%; }
+
+    .audience__grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+
+    .quote-card { padding: 48px; }
+    .quote-card__mark { width: 40px; height: 40px; }
+    .quote-card__mark--start { top: 20px; left: 16px; }
+    .quote-card__mark--end { right: 16px; bottom: 16px; }
+    .quote-card blockquote { font-size: 20px; line-height: 34px; }
+    .stack { height: auto; }
+    .stack__card { position: relative; height: auto; }
+    .stack__card--back1,
+    .stack__card--back2 { display: none; }
+    .stack__card--front { top: 0; }
+
+    .tabs { overflow-x: auto; justify-content: flex-start; padding-bottom: 8px; }
+    .tabs__pill { flex: none; }
+}
+
+/* single-column content blocks ---- */
+@media (max-width: 900px) {
+    :root { --wrap-pad: 32px; }
+    .wrap--wide, .wrap--footer { padding: 0 32px; }
+
+    .nav {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 24px 0;
+        gap: 16px;
+    }
+
+    .nav__right {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 16px;
+    }
+
+    .nav__menu { gap: 20px; font-size: 17px; }
+
+    .hero__title { font-size: 40px; line-height: 54px; }
+    .hero__text { font-size: 18px; line-height: 30px; }
+
+    .faq__grid { flex-direction: column; gap: 15.95px; }
+    .audience__grid { grid-template-columns: 1fr; }
+    .audience-card { min-height: 0; }
+
+    .footer__newsletter,
+    .footer__main { flex-direction: column; gap: 40px; }
+
+    .footer__links { padding-top: 0; flex-wrap: wrap; gap: 40px; }
+    .subscribe { margin-top: 8px; }
+
+    .carousel { height: auto; gap: 40px; }
+}
+
