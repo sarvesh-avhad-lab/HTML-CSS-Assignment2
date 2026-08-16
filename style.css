@@ -798,3 +798,101 @@ button { font: inherit; color: inherit; }
     align-self: flex-start;
     margin-top: 27.3px;
 }
+
+/* Reviews secttion */
+.testimonials { background: var(--neutral); }
+
+.testimonials__body {
+    display: flex;
+    flex-direction: column;
+    gap: 31.5px;
+    width: 100%;
+}
+
+.stack {
+    position: relative;
+    width: 100%;
+    max-width: 934.5px;
+    height: 364.64px;
+    margin: 0 auto;
+}
+
+.stack__card {
+    position: absolute;
+    height: 325.5px;
+    background: var(--white);
+    border-radius: 21px;
+}
+
+.stack__card--back2 {
+    top: 0;
+    left: 8.2%;
+    width: 84.27%;
+    background: rgba(255, 255, 255, 0.45);
+}
+
+.stack__card--back1 {
+    top: 19.1px;
+    left: 4.38%;
+    width: 93.26%;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.stack__card--front {
+    top: 39.14px;
+    left: 0;
+    width: 100%;
+}
+
+.quote-card { padding: 56.5px 122.85px 38px; }
+
+.quote-card__mark {
+    position: absolute;
+    width: 52.5px;
+    height: 52.5px;
+}
+
+.quote-card__mark--start { top: 36.55px; left: 30.45px; }
+.quote-card__mark--end { bottom: -14.5px; right: -22.05px; }
+
+.quote-card__stars { width: 112.35px; height: 21.38px; }
+
+.quote-card blockquote {
+    max-width: 683.55px;
+    margin: 23.32px 0 39.3px;
+    font-weight: 500;
+    font-size: 23.1px;
+    line-height: 42px;
+    color: var(--tertiary);
+}
+
+.quote-card__author {
+    display: flex;
+    align-items: center;
+    gap: 26.25px;
+}
+
+.quote-card__author img {
+    flex: none;
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.quote-card__author strong {
+    display: block;
+    font-weight: 600;
+    font-size: 16.8px;
+    line-height: 26.25px;
+    color: var(--tertiary);
+}
+
+.quote-card__author small {
+    display: block;
+    margin-top: 5.25px;
+    font-weight: 400;
+    font-size: 12.6px;
+    line-height: 18.9px;
+    color: var(--secondary);
+}
