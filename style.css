@@ -121,6 +121,9 @@ button { font: inherit; color: inherit; }
 
 /* Buttons  */
 .btn {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -143,6 +146,19 @@ button { font: inherit; color: inherit; }
     flex: none;
 }
 
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--tertiary);
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+}
+
+.btn:hover::before,
+.btn:focus-visible::before { transform: translateX(0); }
+
 .btn--primary { background: var(--gradient-btn); color: var(--white); }
 .btn--dark { background: var(--secondary); color: var(--white); }
 
@@ -151,6 +167,9 @@ button { font: inherit; color: inherit; }
     border: 1.05px solid var(--neutral);
     color: var(--neutral);
 }
+
+.btn--ghost::before { background: var(--neutral); }
+.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--tertiary); }
 
 .btn--sm {
     height: 31.92px;
@@ -211,6 +230,9 @@ button { font: inherit; color: inherit; }
     font-size: 22.643px;
     line-height: 29px;
 }
+
+.nav__menu a { transition: color 0.2s ease; }
+.nav__menu a:hover { color: var(--primary); }
 
 .nav__actions {
     display: flex;
@@ -1414,3 +1436,46 @@ button { font: inherit; color: inherit; }
     .footer__bottom { flex-direction: column; align-items: flex-start; gap: 20px; }
     .footer__bottom ul { flex-wrap: wrap; gap: 24px; }
 }
+
+
+/* (script.js)  */
+
+[hidden] { display: none !important; }
+
+
+/*  Header: hamburger  */
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5.6px;
+    width: 47.25px;
+    height: 47.25px;
+    padding: 0;
+    background: rgba(30, 24, 16, 0);
+    border: 1.05px solid var(--tertiary);
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.nav__toggle span {
+    display: block;
+    width: 23px;
+    height: 2.2px;
+    border-radius: 2px;
+    background: var(--tertiary);
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.nav--open .nav__toggle {
+    border-color: var(--primary);
+    background: rgba(220, 67, 41, 0.06);
+}
+
+.nav--open .nav__toggle span { background: var(--primary); }
+.nav--open .nav__toggle span:nth-child(1) { transform: translateY(7.8px) rotate(45deg); }
+.nav--open .nav__toggle span:nth-child(2) { opacity: 0; }
+.nav--open .nav__toggle span:nth-child(3) { transform: translateY(-7.8px) rotate(-45deg); }
+
+
