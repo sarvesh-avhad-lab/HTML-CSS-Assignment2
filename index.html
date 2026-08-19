@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figmma Assignment 2</title>
+    <title>Foxstudy — Advanced Physiotherapy Training</title>
+
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,7 +15,7 @@
 </head>
 <body>
 
-    <!--  HEADER Section -->
+    <!-- ============ HEADER ============ -->
     <header class="site-header">
         <div class="wrap wrap--wide">
             <nav class="nav" aria-label="Main">
@@ -22,7 +23,14 @@
                     <img src="Design Assets Folder/Header/Logo.png" alt="Foxstudy" width="265" height="52">
                 </a>
 
-                <div class="nav__right">
+                <button class="nav__toggle" id="navToggle" type="button"
+                        aria-label="Open menu" aria-expanded="false" aria-controls="primaryNav">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="nav__right" id="primaryNav">
                     <ul class="nav__menu">
                         <li><a href="#">About</a></li>
                         <li><a href="#courses">Courses</a></li>
@@ -47,7 +55,8 @@
     </header>
 
     <main>
-        <!--  HERO Section -->
+
+        <!-- ============ HERO ============ -->
         <section class="hero">
             <div class="wrap wrap--wide">
                 <div class="hero__card">
@@ -74,11 +83,11 @@
                         <div class="hero__actions">
                             <a class="btn btn--primary" href="#courses">
                                 <span>Find Your Course</span>
-                                <img src="Design Assets Folder/Right.png" alt="" width="21" height="21">
+                                <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="21" height="21">
                             </a>
                             <a class="btn btn--ghost" href="#audience">
                                 <span>For Clinics &amp; Team</span>
-                                <img src="Design Assets Folder/Right.png" alt="" width="21" height="21">
+                                <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="21" height="21">
                             </a>
                         </div>
                     </div>
@@ -125,7 +134,7 @@
             </div>
         </section>
 
-        <!--  TRUSTED Section  -->
+        <!-- ============ TRUSTED LOGOS ============ -->
         <section class="section trusted" id="trusted">
             <div class="wrap">
                 <header class="section-head">
@@ -170,7 +179,7 @@
             </div>
         </section>
 
-        <!-- Features and Courses  -->
+        <!-- ============ COURSES ============ -->
         <section class="section courses" id="courses">
             <img class="courses__pattern" src="Design Assets Folder/Courses/patternbg.png" alt="" width="1512" height="1345">
 
@@ -189,26 +198,26 @@
                 <div class="courses__body">
                     <div class="tabs" role="tablist" aria-label="Course levels">
                         <div class="tabs__pill">
-                            <button class="tab" type="button" role="tab" aria-selected="false">
+                            <button class="tab" type="button" role="tab" data-filter="all" aria-selected="false">
                                 <img src="Design Assets Folder/Courses/All Courses.svg" alt="" width="27" height="27">
                                 <span>All Courses</span>
                             </button>
-                            <button class="tab tab--active" type="button" role="tab" aria-selected="true">
+                            <button class="tab tab--active" type="button" role="tab" data-filter="basic" aria-selected="true">
                                 <img src="Design Assets Folder/Courses/Basic.svg" alt="" width="27" height="27">
                                 <span>Basic</span>
                                 <img class="tab__info" src="assets/icon-info-light.svg" alt="" width="25" height="25">
                             </button>
-                            <button class="tab" type="button" role="tab" aria-selected="false">
+                            <button class="tab" type="button" role="tab" data-filter="essential" aria-selected="false">
                                 <img src="Design Assets Folder/Courses/Essential.svg" alt="" width="27" height="27">
                                 <span>Essential</span>
                                 <img class="tab__info" src="assets/icon-info-dark.svg" alt="" width="25" height="25">
                             </button>
-                            <button class="tab" type="button" role="tab" aria-selected="false">
+                            <button class="tab" type="button" role="tab" data-filter="expert" aria-selected="false">
                                 <img src="Design Assets Folder/Courses/Expert.svg" alt="" width="27" height="27">
                                 <span>Expert</span>
                                 <img class="tab__info" src="assets/icon-info-dark.svg" alt="" width="25" height="25">
                             </button>
-                            <button class="tab" type="button" role="tab" aria-selected="false">
+                            <button class="tab" type="button" role="tab" data-filter="snippet" aria-selected="false">
                                 <img src="Design Assets Folder/Courses/Snippet.svg" alt="" width="27" height="27">
                                 <span>Snippet</span>
                                 <img class="tab__info" src="assets/icon-info-dark.svg" alt="" width="25" height="25">
@@ -217,7 +226,7 @@
                     </div>
 
                     <ul class="course-grid">
-                        <li class="course-card">
+                        <li class="course-card" data-level="essential">
                             <div class="course-card__media">
                                 <img src="assets/course-1.png" alt="Therapist treating a patient's jaw" width="315" height="231">
                                 <span class="pill pill--level">Essential</span>
@@ -234,12 +243,12 @@
                                 <p class="course-card__price">€ 119</p>
                                 <a class="btn btn--dark btn--sm" href="#">
                                     <span>View Details</span>
-                                    <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                                 </a>
                             </div>
                         </li>
 
-                        <li class="course-card">
+                        <li class="course-card" data-level="basic">
                             <div class="course-card__media">
                                 <img src="assets/course-2.png" alt="Clinician consulting with a patient" width="315" height="231">
                                 <span class="pill pill--level">Basic</span>
@@ -256,12 +265,12 @@
                                 <p class="course-card__price">€ 59</p>
                                 <a class="btn btn--dark btn--sm" href="#">
                                     <span>View Details</span>
-                                    <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                                 </a>
                             </div>
                         </li>
 
-                        <li class="course-card">
+                        <li class="course-card" data-level="expert">
                             <div class="course-card__media">
                                 <img src="assets/course-3.png" alt="Therapist mobilizing a patient's arm" width="315" height="231">
                                 <span class="pill pill--level">Expert</span>
@@ -278,12 +287,12 @@
                                 <p class="course-card__price">€ 474</p>
                                 <a class="btn btn--dark btn--sm" href="#">
                                     <span>View Details</span>
-                                    <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                                 </a>
                             </div>
                         </li>
 
-                        <li class="course-card">
+                        <li class="course-card" data-level="essential">
                             <div class="course-card__media">
                                 <img src="assets/course-4.png" alt="Gait training in a rehabilitation clinic" width="315" height="231">
                                 <span class="pill pill--level">Essential</span>
@@ -300,7 +309,271 @@
                                 <p class="course-card__price">€ 118</p>
                                 <a class="btn btn--dark btn--sm" href="#">
                                     <span>View Details</span>
-                                    <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="basic">
+                            <div class="course-card__media">
+                                <img src="assets/course-4.png" alt="Therapist reviewing anatomy with a patient" width="315" height="231">
+                                <span class="pill pill--level">Basic</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Foundations of Clinical Anatomy for Therapists</h3>
+                                <p>Refresh the anatomical landmarks and movement patterns every rehabilitation assessment is built on.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>120 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 69</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="basic">
+                            <div class="course-card__media">
+                                <img src="assets/course-1.png" alt="Therapist performing a manual therapy technique" width="315" height="231">
+                                <span class="pill pill--level">Basic</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Introduction to Manual Therapy Techniques</h3>
+                                <p>Build a safe, structured hands-on routine for the spine, shoulder, and hip in everyday practice.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>150 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>German</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 79</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="basic">
+                            <div class="course-card__media">
+                                <img src="assets/course-3.png" alt="Clinician explaining a treatment plan" width="315" height="231">
+                                <span class="pill pill--level">Basic</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Pain Science Essentials for Rehabilitation</h3>
+                                <p>Explain modern pain mechanisms to your patients and turn that understanding into better adherence.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>100 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 64</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="essential">
+                            <div class="course-card__media">
+                                <img src="assets/course-2.png" alt="Therapist mobilising a patient&rsquo;s shoulder" width="315" height="231">
+                                <span class="pill pill--level">Essential</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Shoulder Rehabilitation After Rotator Cuff Repair</h3>
+                                <p>Follow a phase-by-phase protocol from early protection to full return to overhead activity.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>210 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 129</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="essential">
+                            <div class="course-card__media">
+                                <img src="assets/course-3.png" alt="Balance assessment in a clinic" width="315" height="231">
+                                <span class="pill pill--level">Essential</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Vestibular Rehabilitation: Assessment &amp; Exercise</h3>
+                                <p>Screen dizziness confidently and prescribe habituation and gaze-stability exercises that work.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>195 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>Multilingual</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 139</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="expert">
+                            <div class="course-card__media">
+                                <img src="assets/course-1.png" alt="Neurological rehabilitation session" width="315" height="231">
+                                <span class="pill pill--level">Expert</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Advanced Spasticity Management in Adult Neurorehab</h3>
+                                <p>Combine tone assessment, targeted therapy, and outcome tracking for complex neurological caseloads.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>300 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>German</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 429</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="expert">
+                            <div class="course-card__media">
+                                <img src="assets/course-4.png" alt="Child walking during a gait analysis" width="315" height="231">
+                                <span class="pill pill--level">Expert</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Pediatric Gait Analysis: Advanced Clinical Reasoning</h3>
+                                <p>Interpret 3D gait data and translate findings into surgical and therapeutic decisions for children.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>345 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 489</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="expert">
+                            <div class="course-card__media">
+                                <img src="assets/course-2.png" alt="Therapist assessing nerve mobility" width="315" height="231">
+                                <span class="pill pill--level">Expert</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Complex Case Management in Neurodynamics</h3>
+                                <p>Work through advanced nerve-related presentations with structured differential reasoning.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>285 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>Multilingual</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 455</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="snippet">
+                            <div class="course-card__media">
+                                <img src="assets/course-3.png" alt="Clinician taking a patient history" width="315" height="231">
+                                <span class="pill pill--level">Snippet</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>5-Minute Screening for Red Flags</h3>
+                                <p>A compact refresher on the screening questions that must never be skipped in a first session.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>15 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">Free</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="snippet">
+                            <div class="course-card__media">
+                                <img src="assets/course-1.png" alt="Therapist treating a patient&rsquo;s neck" width="315" height="231">
+                                <span class="pill pill--level">Snippet</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Quick Guide: Cervical Mobilisation Grades</h3>
+                                <p>A short, practical walkthrough of mobilisation grades and when each one is appropriate.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>20 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>German</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 9</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="snippet">
+                            <div class="course-card__media">
+                                <img src="assets/course-4.png" alt="Gait training on a walkway" width="315" height="231">
+                                <span class="pill pill--level">Snippet</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Gait Deviations at a Glance</h3>
+                                <p>Spot the six most common gait deviations and the muscle groups behind each of them.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>18 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>English</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">&euro; 9</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="course-card" data-level="snippet">
+                            <div class="course-card__media">
+                                <img src="assets/course-2.png" alt="Therapist planning goals with a patient" width="315" height="231">
+                                <span class="pill pill--level">Snippet</span>
+                            </div>
+                            <div class="course-card__body">
+                                <h3>Goal Setting with SMART Criteria</h3>
+                                <p>Turn vague rehabilitation goals into measurable targets patients actually understand.</p>
+                            </div>
+                            <ul class="course-card__meta">
+                                <li><img src="assets/icon-time.svg" alt="Duration" width="14" height="14"><span>12 min</span></li>
+                                <li><img src="assets/icon-speak.svg" alt="Language" width="14" height="14"><span>Multilingual</span></li>
+                            </ul>
+                            <div class="course-card__foot">
+                                <p class="course-card__price">Free</p>
+                                <a class="btn btn--dark btn--sm" href="#">
+                                    <span>View Details</span>
+                                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                                 </a>
                             </div>
                         </li>
@@ -309,12 +582,12 @@
 
                 <a class="btn btn--primary" href="#">
                     <span>View All Courses</span>
-                    <img src="Design Assets Folder/Right.png" alt="" width="21" height="21">
+                    <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="21" height="21">
                 </a>
             </div>
         </section>
 
-        <!-- STEPS OF LEARNING -->
+        <!-- ============ STEPS ============ -->
         <section class="section steps" id="steps">
             <div class="wrap">
                 <header class="section-head">
@@ -322,22 +595,22 @@
                 </header>
 
                 <ol class="steps__list">
-                    <li class="step">
-                        <img class="step__badge" src="Design Assets Folder/Steps to apply/step1.png" alt="Step 1" width="89" height="89">
+                    <li class="step step--active" data-step="01" role="button" tabindex="0" aria-pressed="true">
+                        <span class="step__badge" aria-hidden="true"><span>01</span></span>
                         <div class="step__body">
                             <h3>Choose Your Course</h3>
                             <p>Browse physiotherapy and rehabilitation online courses by level and clinical focus.</p>
                         </div>
                     </li>
-                    <li class="step">
-                        <img class="step__badge" src="Design Assets Folder/Steps to apply/step2.png" alt="Step 2" width="89" height="89">
+                    <li class="step" data-step="02" role="button" tabindex="0" aria-pressed="false">
+                        <span class="step__badge" aria-hidden="true"><span>02</span></span>
                         <div class="step__body">
                             <h3>Learn at Your Own Pace</h3>
                             <p>Access structured digital learning designed for busy healthcare professionals.</p>
                         </div>
                     </li>
-                    <li class="step">
-                        <img class="step__badge" src="Design Assets Folder/Steps to apply/step3.png" alt="Step 3" width="89" height="89">
+                    <li class="step" data-step="03" role="button" tabindex="0" aria-pressed="false">
+                        <span class="step__badge" aria-hidden="true"><span>03</span></span>
                         <div class="step__body">
                             <h3>Apply in Practice</h3>
                             <p>Use evidence-based techniques directly in patient care.</p>
@@ -347,7 +620,7 @@
             </div>
         </section>
 
-        <!-- Our Faculty -->
+        <!-- ============ FACULTY ============ -->
         <section class="section faculty" id="faculty">
             <div class="wrap">
                 <header class="section-head">
@@ -397,6 +670,46 @@
                                 <p>Sports medicine and rehabilitation</p>
                             </div>
                         </li>
+
+                        <li class="person-card">
+                            <img src="Design Assets Folder/Our faculty/Image2_2x.webp" alt="Dr. Marek Novak" width="315" height="368">
+                            <div class="person-card__veil"></div>
+                            <span class="pill pill--level">18+ years in neurorehabilitation</span>
+                            <div class="person-card__body">
+                                <h3>Dr. Marek Novak</h3>
+                                <p>Specialist in stroke rehabilitation</p>
+                            </div>
+                        </li>
+
+                        <li class="person-card">
+                            <img src="Design Assets Folder/Our faculty/Image3_2x.webp" alt="Lena Hoffmann" width="315" height="368">
+                            <div class="person-card__veil"></div>
+                            <span class="pill pill--level">10+ years in pediatric therapy</span>
+                            <div class="person-card__body">
+                                <h3>Lena Hoffmann</h3>
+                                <p>Pediatric rehabilitation and gait training</p>
+                            </div>
+                        </li>
+
+                        <li class="person-card">
+                            <img src="Design Assets Folder/Our faculty/Image1_2x.webp" alt="Dr. Sofia Bianchi" width="315" height="368">
+                            <div class="person-card__veil"></div>
+                            <span class="pill pill--level">14+ years in manual therapy</span>
+                            <div class="person-card__body">
+                                <h3>Dr. Sofia Bianchi</h3>
+                                <p>Expert in spinal and pelvic dysfunction</p>
+                            </div>
+                        </li>
+
+                        <li class="person-card">
+                            <img src="Design Assets Folder/Our faculty/Image4_2x.webp" alt="Tomas Lindqvist" width="315" height="368">
+                            <div class="person-card__veil"></div>
+                            <span class="pill pill--level">20+ years in clinical education</span>
+                            <div class="person-card__body">
+                                <h3>Tomas Lindqvist</h3>
+                                <p>Lecturer in evidence-based practice</p>
+                            </div>
+                        </li>
                     </ul>
 
                     <div class="slider-nav">
@@ -414,7 +727,7 @@
             </div>
         </section>
 
-        <!-- Explore Courses-->
+        <!-- ============ AUDIENCE ============ -->
         <section class="section audience" id="audience">
             <div class="wrap">
                 <header class="section-head">
@@ -425,7 +738,7 @@
                 </header>
 
                 <div class="audience__grid">
-                    <article class="audience-card audience-card--accent">
+                    <article class="audience-card audience-card--accent" role="button" tabindex="0" aria-pressed="true">
                         <h3>For Individuals</h3>
                         <p>Advance your clinical skills with flexible, self-paced physiotherapy and rehabilitation courses.</p>
                         <ul class="checklist">
@@ -444,11 +757,11 @@
                         </ul>
                         <a class="btn btn--primary btn--sm" href="#courses">
                             <span>Browse Courses</span>
-                            <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                            <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                         </a>
                     </article>
 
-                    <article class="audience-card">
+                    <article class="audience-card" role="button" tabindex="0" aria-pressed="false">
                         <h3>For Clinics &amp; Institutions</h3>
                         <p>Train your team with structured rehabilitation programs designed for measurable clinical impact.</p>
                         <ul class="checklist">
@@ -467,14 +780,14 @@
                         </ul>
                         <a class="btn btn--dark btn--sm" href="#">
                             <span>Explore Team Training</span>
-                            <img src="Design Assets Folder/Right.png" alt="" width="14" height="14">
+                            <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="14" height="14">
                         </a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!--  Reviews  -->
+        <!-- ============ TESTIMONIALS ============ -->
         <section class="section testimonials" id="testimonials">
             <div class="wrap">
                 <header class="section-head">
@@ -525,7 +838,7 @@
             </div>
         </section>
 
-        <!-- FAQ section -->
+        <!-- ============ FAQ ============ -->
         <section class="section faq" id="faq">
             <div class="wrap">
                 <header class="section-head">
@@ -534,34 +847,38 @@
 
                 <div class="faq__grid">
                     <div class="faq__col">
-                        <div class="faq-item faq-item--open">
-                            <h3 class="faq-item__q">Are these courses accredited for continuing education credits?</h3>
+                        <details class="faq-item" open>
+                            <summary>Are these courses accredited for continuing education credits?</summary>
                             <p>Yes, many courses provide CE / CPD credits depending on your region and professional requirements.</p>
-                        </div>
+                        </details>
 
                         <details class="faq-item">
                             <summary>Who are these courses for?</summary>
+                            <p>They are built for physiotherapists, occupational therapists, and rehabilitation professionals at every stage of practice.</p>
                         </details>
                     </div>
 
                     <div class="faq__col">
                         <details class="faq-item">
                             <summary>Do you offer pediatric rehabilitation courses?</summary>
+                            <p>Yes, our catalogue covers pediatric rehabilitation, including gait analysis and cerebral palsy management.</p>
                         </details>
 
                         <details class="faq-item">
                             <summary>Can I apply these techniques in real clinical practice?</summary>
+                            <p>Every course is case-based, so the techniques are ready to use in your next patient session.</p>
                         </details>
 
                         <details class="faq-item">
                             <summary>Can I learn at my own pace?</summary>
+                            <p>All courses are self-paced and stay available after purchase, so you can learn around your clinical schedule.</p>
                         </details>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--  browse courses section-->
+        <!-- ============ CTA ============ -->
         <section class="section cta" id="cta">
             <div class="wrap">
                 <div class="cta__inner">
@@ -569,7 +886,7 @@
                         <h2>Ready to Advance Your Practice While Earning CE Credits?</h2>
                         <a class="btn btn--primary" href="#courses">
                             <span>Browse Courses</span>
-                            <img src="Design Assets Folder/Right.png" alt="" width="21" height="21">
+                            <img src="Design Assets Folder/Header/CTA icon.png" alt="" width="21" height="21">
                         </a>
                     </div>
 
@@ -580,7 +897,7 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- ============ FOOTER ============ -->
     <footer class="site-footer" id="site-footer">
         <div class="wrap wrap--footer">
 
@@ -663,5 +980,6 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
