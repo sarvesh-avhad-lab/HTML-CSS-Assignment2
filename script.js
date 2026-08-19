@@ -204,13 +204,56 @@
         });
     }
 
-    /* 6. init all */ 
+    /* 6. FAQ accordion — expands on hover, click/keyboard for touch devices */
+    function initFaq() {
+        var grid = document.querySelector(".faq__grid");
+        if (!grid) return;
+
+        var items = Array.prototype.slice.call(grid.querySelectorAll(".faq-item"));
+        if (!items.length) return;
+
+        /* mirrors the CSS: while any card is hovered the default-open card collapses */
+        function isExpanded(item) {
+            if (item.matches(":hover") || item.matches(":focus-within")) return true;
+            return !grid.matches(":hover") && item.classList.contains("is-open");
+        }
+
+        function sync() {
+            items.forEach(function (item) {
+                var btn = item.querySelector(".faq-item__q");
+                if (btn) btn.setAttribute("aria-expanded", isExpanded(item) ? "true" : "false");
+            });
+        }
+
+        items.forEach(function (item) {
+            ["mouseenter", "mouseleave", "focusin", "focusout"].forEach(function (evt) {
+                item.addEventListener(evt, sync);
+            });
+
+            var btn = item.querySelector(".faq-item__q");
+            if (!btn) return;
+
+            btn.addEventListener("click", function () {
+                var wasOpen = item.classList.contains("is-open");
+                items.forEach(function (other) {
+                    other.classList.remove("is-open");
+                });
+                if (!wasOpen) item.classList.add("is-open");
+                sync();
+            });
+        });
+
+        sync();
+    }
+
+    /* 7. init all */ 
     function init() {
         initNav();
         initCourseTabs();
         initSteps();
         initFacultySlider();
         initAudienceCards();
+        initFaq();
     }
 
     if (document.readyState === "loading") {
