@@ -204,7 +204,87 @@
         });
     }
 
-    /* 6. FAQ accordion — expands on hover, click/keyboard for touch devices */
+    /* 6. testimonials stack — click card halves or the nav buttons to rotate */
+    function initTestimonialStack() {
+        var section = document.querySelector(".testimonials");
+        if (!section) return;
+
+        var stack = section.querySelector(".stack");
+        var nav = section.querySelector(".slider-nav");
+        if (!stack) return;
+
+        var cards = Array.prototype.slice.call(stack.querySelectorAll(".stack__card"));
+        if (cards.length < 2) return;
+        
+        var POSITIONS = ["stack__card--front", "stack__card--back1", "stack__card--back2"];
+        var order = cards.slice();
+        var animating = false;
+
+        function render() {
+            order.forEach(function (card, i) {
+                var isFront = i === 0;
+
+                POSITIONS.forEach(function (cls) {
+                    card.classList.remove(cls);
+                });
+                card.classList.add(POSITIONS[Math.min(i, POSITIONS.length - 1)]);
+
+                card.setAttribute("aria-hidden", isFront ? "false" : "true");
+                card.classList.remove("is-prev-zone", "is-next-zone");
+            });
+        }
+
+        function next() {
+            order.push(order.shift());
+            render();
+        }
+        
+        function prev() {
+            order.unshift(order.pop());
+            render();
+        }
+
+        function rotate(dir) {
+            if (animating) return;
+            animating = true;
+            if (dir === "next") next();
+            else prev();
+            window.setTimeout(function () {
+                animating = false;
+            }, 450);
+        }
+
+        stack.addEventListener("click", function (e) {
+            var front = order[0];
+            if (!front.contains(e.target)) return;
+
+            var rect = front.getBoundingClientRect();
+            rotate(e.clientX - rect.left > rect.width / 2 ? "next" : "prev");
+        });
+        
+        stack.addEventListener("mousemove", function (e) {
+            var front = order[0];
+            if (!front.contains(e.target)) return;
+
+            var rect = front.getBoundingClientRect();
+            var isNext = e.clientX - rect.left > rect.width / 2;
+
+            front.classList.toggle("is-next-zone", isNext);
+            front.classList.toggle("is-prev-zone", !isNext);
+        });
+
+        if (nav) {
+            var prevBtn = nav.querySelector(".slider-nav__btn--prev");
+            var nextBtn = nav.querySelector(".slider-nav__btn--next");
+
+            if (prevBtn) prevBtn.addEventListener("click", function () { rotate("prev"); });
+            if (nextBtn) nextBtn.addEventListener("click", function () { rotate("next"); });
+        }
+
+        render();
+    }
+
+    /* 7. FAQ accordion — expands on hover, click/keyboard for touch devices */
     function initFaq() {
         var grid = document.querySelector(".faq__grid");
         if (!grid) return;
@@ -212,7 +292,6 @@
         var items = Array.prototype.slice.call(grid.querySelectorAll(".faq-item"));
         if (!items.length) return;
 
-        /* mirrors the CSS: while any card is hovered the default-open card collapses */
         function isExpanded(item) {
             if (item.matches(":hover") || item.matches(":focus-within")) return true;
             return !grid.matches(":hover") && item.classList.contains("is-open");
@@ -246,13 +325,14 @@
         sync();
     }
 
-    /* 7. init all */ 
+    /* 8. init all */ 
     function init() {
         initNav();
         initCourseTabs();
         initSteps();
         initFacultySlider();
         initAudienceCards();
+        initTestimonialStack();
         initFaq();
     }
 

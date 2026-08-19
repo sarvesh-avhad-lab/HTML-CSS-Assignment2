@@ -840,12 +840,15 @@ button { font: inherit; color: inherit; }
     height: 325.5px;
     background: var(--white);
     border-radius: 21px;
+    transition: top 0.45s ease, left 0.45s ease, width 0.45s ease,
+                background-color 0.45s ease, z-index 0s linear 0.22s;
 }
 
 .stack__card--back2 {
     top: 0;
     left: 8.2%;
     width: 84.27%;
+    z-index: 1;
     background: rgba(255, 255, 255, 0.45);
 }
 
@@ -853,6 +856,7 @@ button { font: inherit; color: inherit; }
     top: 19.1px;
     left: 4.38%;
     width: 93.26%;
+    z-index: 2;
     background: rgba(255, 255, 255, 0.72);
 }
 
@@ -860,7 +864,25 @@ button { font: inherit; color: inherit; }
     top: 39.14px;
     left: 0;
     width: 100%;
+    z-index: 3;
+    cursor: pointer;
 }
+
+.stack__card--back1 > *,
+.stack__card--back2 > * {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.stack__card--front > * {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease 0.2s, visibility 0s;
+}
+
+.stack__card--front.is-prev-zone { cursor: w-resize; }
+.stack__card--front.is-next-zone { cursor: e-resize; }
 
 .quote-card { padding: 56.5px 122.85px 38px; }
 
