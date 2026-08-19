@@ -146,19 +146,6 @@ button { font: inherit; color: inherit; }
     flex: none;
 }
 
-.btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: var(--tertiary);
-    transform: translateX(-100%);
-    transition: transform 0.35s ease;
-}
-
-.btn:hover::before,
-.btn:focus-visible::before { transform: translateX(0); }
-
 .btn--primary { background: var(--gradient-btn); color: var(--white); }
 .btn--dark { background: var(--secondary); color: var(--white); }
 
@@ -167,9 +154,6 @@ button { font: inherit; color: inherit; }
     border: 1.05px solid var(--neutral);
     color: var(--neutral);
 }
-
-.btn--ghost::before { background: var(--neutral); }
-.btn--ghost:hover, .btn--ghost:focus-visible { color: var(--tertiary); }
 
 .btn--sm {
     height: 31.92px;
