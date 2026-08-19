@@ -375,9 +375,13 @@ button { font: inherit; color: inherit; }
     align-items: center;
     gap: var(--gap);
     width: max-content;
+    animation: marquee 45s linear infinite;
 }
 
-.carousel__row--reverse .carousel__track { --gap: 90px; }
+.carousel__row--reverse .carousel__track { 
+    --gap: 90px; 
+    animation-direction: reverse;
+}
 
 .carousel__track img {
     flex: none;
@@ -385,6 +389,14 @@ button { font: inherit; color: inherit; }
     height: 73.5px;
     object-fit: contain;
     opacity: 0.8;
+}
+
+@keyframes marquee {
+    to { transform: translateX(calc(-50% - var(--gap) / 2)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .carousel__track { animation: none; }
 }
 
 /* Geatures & COURSES */
